@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Clicker Game</title>
+<style>
+body {
+text-align: center;
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #ffffff;
+  color: #000000;
+  text-align: center;
+  border-radius: 20px;
+  border: 2px solid black;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+#counter {
+font-size: 30px;
+margin: 20px;
+}
+
+Button {
+font-size: 20px;
+padding: 10px 20px;
+border-radius: 20px;
+box-shadow: 2px 2px 2px;
+
+}
+
+button:active{
+    transform: translate(2px,2px);
+box-shadow: 0px 0px 00 #4d5259;
+}
+
+img{
+    width: 200px;
+    position: relative;
+    left: 50px;
+
+}
+img:active {
+    transform: translate(4px,4px);
+box-shadow: 0px 0px 00 #4d5259;
+}
+
+#shop1{
+    opacity: 0;
+    margin-top: 125px;
+    margin-right: 230px;
+
+}
+
+#shop1.active{
+    opacity: 1;
+}
+
+#moveshop{
+    position: relative;
+    right: 400px;
+    top: 125px;
+}
+
+
+
+body{
+    background: url("OIP\ \(2\).jpg") no-repeat center center fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+</style>
+</head>
+<body>
+<h1>Clicks</h1>
+<p id="counter">0</p>
+<script src="page.js" defer></script>
+<img onclick="incrementCounter()" id="image" src="./cursor_PNG11.png">
+<button id="moveshop" onclick="expandshop()">SHOP</a></button> <br> <br>
+
+<div id="shop1">
+    <button id="Cursor" onclick="Cursor()">Cursor   +1/sec   Price:10</button> <br>
+    <button id="BigClicker" onclick="BigClicker()"> Big Clicker  2x clicks    Price:250</button><br>
+    <button id="autoclicker" onclick="autoclicker()"> Auto Clicker  +100/sec   Price:2500</button><br>
+    <button id="GodClicker" onclick="godclicker()"> God Clicker  +1000/sec   Price:25000</button><br>   
+    <button id="Goldcursor" onclick="goldcursor()"> Gold Cursor  x10 clicks  Price:100000</button><br>
+    <button id="Clickerfactory" onclick="clickerfactory()"> Clicker Factory  +100000/sec  Price:10000000</button><br>
+
+</div>
+<div id="snackbar">Too Poor!</div>
+</body>
+</html>
